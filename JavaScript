@@ -1,0 +1,201 @@
+document
+.getElementById("feedbackForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+
+
+    let name =
+    document.getElementById("name").value.trim();
+
+
+    let date =
+    document.getElementById("date").value;
+
+
+
+    let breakfast =
+    document.querySelector(
+    'input[name="breakfast"]:checked'
+    );
+
+
+    let lunch =
+    document.querySelector(
+    'input[name="lunch"]:checked'
+    );
+
+
+    let dinner =
+    document.querySelector(
+    'input[name="dinner"]:checked'
+    );
+
+
+
+    let comment =
+    document.getElementById("comment").value.trim();
+
+
+
+
+    if(name===""){
+
+        alert("Please Enter Name");
+
+        return;
+
+    }
+
+
+
+    if(date===""){
+
+        alert("Please Select Date");
+
+        return;
+
+    }
+
+
+
+    if(!breakfast){
+
+        alert("Please Give Breakfast Rating");
+
+        return;
+
+    }
+
+
+
+    if(!lunch){
+
+        alert("Please Give Lunch Rating");
+
+        return;
+
+    }
+
+
+
+    if(!dinner){
+
+        alert("Please Give Dinner Rating");
+
+        return;
+
+    }
+
+
+
+
+
+    const feedbackData = {
+
+
+        name:name,
+
+        date:date,
+
+
+        breakfast:
+        breakfast.value,
+
+
+        lunch:
+        lunch.value,
+
+
+        dinner:
+        dinner.value,
+
+
+        comment:comment
+
+
+    };
+
+
+
+
+
+    fetch("backend/save.php",{
+
+
+        method:"POST",
+
+
+        headers:{
+
+
+            "Content-Type":
+            "application/json"
+
+
+        },
+
+
+        body:
+        JSON.stringify(feedbackData)
+
+
+    })
+
+
+
+    .then(response=>response.json())
+
+
+    .then(result=>{
+
+
+        if(result.success){
+
+
+            alert(
+            "✅ Feedback Saved Successfully"
+            );
+
+
+            document
+            .getElementById("feedbackForm")
+            .reset();
+
+
+        }
+
+
+        else{
+
+
+            alert(
+            "❌ Something went wrong"
+            );
+
+
+        }
+
+
+
+    })
+
+
+
+    .catch(error=>{
+
+
+        console.log(error);
+
+
+        alert(
+        "Server Error"
+        );
+
+
+    });
+
+
+
+});
