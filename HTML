@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food Feedback System</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>🍽️ Food Feedback</h1>
+        <p>Your feedback helps us improve food quality</p>
+    </div>
+
+
+    <form id="feedbackForm">
+
+
+        <div class="input-group">
+            <label>Name</label>
+            <input 
+            type="text" 
+            id="name"
+            placeholder="Enter your name"
+            required>
+        </div>
+
+
+
+        <div class="input-group">
+
+            <label>Date</label>
+
+            <input 
+            type="date"
+            id="date"
+            required>
+
+        </div>
+
+
+
+        <div class="food-card">
+
+            <h2>🌅 Breakfast</h2>
+
+            <label>Food Quality</label>
+
+            <div class="rating">
+
+                <input type="radio" name="breakfast" value="1" id="b1">
+                <label for="b1">⭐</label>
+
+                <input type="radio" name="breakfast" value="2" id="b2">
+                <label for="b2">⭐</label>
+
+                <input type="radio" name="breakfast" value="3" id="b3">
+                <label for="b3">⭐</label>
+
+                <input type="radio" name="breakfast" value="4" id="b4">
+                <label for="b4">⭐</label>
+
+                <input type="radio" name="breakfast" value="5" id="b5">
+                <label for="b5">⭐</label>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="food-card">
+
+            <h2>☀️ Lunch</h2>
+
+            <label>Food Quality</label>
+
+
+            <div class="rating">
+
+                <input type="radio" name="lunch" value="1" id="l1">
+                <label for="l1">⭐</label>
+
+                <input type="radio" name="lunch" value="2" id="l2">
+                <label for="l2">⭐</label>
+
+                <input type="radio" name="lunch" value="3" id="l3">
+                <label for="l3">⭐</label>
+
+                <input type="radio" name="lunch" value="4" id="l4">
+                <label for="l4">⭐</label>
+
+                <input type="radio" name="lunch" value="5" id="l5">
+                <label for="l5">⭐</label>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="food-card">
+
+            <h2>🌙 Dinner</h2>
+
+            <label>Food Quality</label>
+
+
+            <div class="rating">
+
+                <input type="radio" name="dinner" value="1" id="d1">
+                <label for="d1">⭐</label>
+
+                <input type="radio" name="dinner" value="2" id="d2">
+                <label for="d2">⭐</label>
+
+                <input type="radio" name="dinner" value="3" id="d3">
+                <label for="d3">⭐</label>
+
+                <input type="radio" name="dinner" value="4" id="d4">
+                <label for="d4">⭐</label>
+
+                <input type="radio" name="dinner" value="5" id="d5">
+                <label for="d5">⭐</label>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="input-group">
+
+            <label>Comments</label>
+
+            <textarea 
+            id="comment"
+            placeholder="Write your feedback..."
+            rows="5"></textarea>
+
+        </div>
+
+
+
+        <button type="submit">
+            Submit Feedback
+        </button>
+
+
+
+    </form>
+
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
